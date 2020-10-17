@@ -128,6 +128,8 @@ class ColorDetect:
         -----------------
         Write the number of colors found to the image
         """
+        if not self.color_description:
+            raise AttributeError(f"No color description found on this object. Perform get_color_count() first.")
         line_spacing = 0
         for k, v in self.color_description.items():
             color_values = str(v) + '% :' + k
